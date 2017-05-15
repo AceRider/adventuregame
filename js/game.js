@@ -175,6 +175,7 @@ GameState.prototype.lavaDeath = function(player, lava){
     console.debug('MORREU');
     this.game.state.start('lose');
 }
+
 /*
 Trabalho Prático 2 26/maio
 
