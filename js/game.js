@@ -94,8 +94,14 @@ var GameState = {
             bat.body.bounce.x = 1;
         });
 
-        this.scoreText = this.game.add.text(400, 50, "Score: 0", { font: "35px Arial", fill: "#ffffff" });
+        this.scoreText = this.game.add.text(100, 50, "Score: 0", { font: "30px Arial", fill: "#ffffff" });
         this.scoreText.fixedToCamera = true;
+
+        this.scoreSpecialText = this.game.add.text(570, 50, "0/0", { font: "30px Arial", fill: "#ffffff" });
+        this.scoreSpecialText.fixedToCamera = true;
+        this.scoreSpecial = this.game.add.sprite(540, 50,"items");
+        this.scoreSpecial.frame=2;
+        this.scoreSpecial.fixedToCamera = true;
 
         //Game state
         this.totalDiamonds = this.diamonds.length;
@@ -113,6 +119,8 @@ var GameState = {
         this.game.physics.arcade.overlap(this.player, this.diamonds, this.diamondCollect, null, this);
         this.game.physics.arcade.overlap(this.player, this.specialpoints, this.specialPointsCollect, null, this);
         this.game.physics.arcade.overlap(this.player, this.bats, this.batCollision, null, this);
+
+        this.scoreSpecialText.text = this.collectedSpecialPoints+"/"+this.totalspecialpoints;
 
         if (this.keys.left.isDown) {
             this.player.body.velocity.x = -150; // Ajustar velocidade
