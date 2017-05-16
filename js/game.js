@@ -171,7 +171,7 @@ var GameState = {
     },
     specialPointsCollect: function (player, specialpoints) {
         this.collectedSpecialPoints++;
-        this.score += 300;
+        this.score += 3000;
         this.scoreText.text = "Score: " + this.score;
         if (this.collectedSpecialPoints == this.totalspecialpoints) {
             console.log('GANHOU');
