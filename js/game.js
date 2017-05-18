@@ -11,7 +11,7 @@ var GameState = {
         this.game.load.audio('pickUp', 'Assets/sounds/pickup.wav');
         this.game.load.audio('enemyDeath', 'Assets/sounds/hit2.ogg');
         this.game.load.audio('music', 'Assets/sounds/mystery.wav');
-        this.game.load.tilemap('level1', 'Assets/maps/level1.json', null, Phaser.Tilemap.TILED_JSON);
+        this.game.load.tilemap('level1', 'Assets/maps/level2.json', null, Phaser.Tilemap.TILED_JSON);
 
     },
 
