@@ -3,15 +3,7 @@
 var GameState = {
 
     preload: function () {
-        this.game.load.spritesheet('player', 'Assets/spritesheets/player.png', 32, 32, 8);
-        this.game.load.spritesheet('items', 'Assets/spritesheets/items.png', 32, 32, 16);
-        this.game.load.spritesheet('enemies', 'Assets/spritesheets/enemies.png', 32, 32, 112);
-        this.game.load.image('mapTiles', 'Assets/spritesheets/tiles.png');
-        this.game.load.audio('jumpSound', 'Assets/sounds/jump.wav');
-        this.game.load.audio('pickUp', 'Assets/sounds/pickup.wav');
-        this.game.load.audio('enemyDeath', 'Assets/sounds/hit2.ogg');
-        this.game.load.audio('music', 'Assets/sounds/mystery.wav');
-        this.game.load.tilemap('level1', 'Assets/maps/level2.json', null, Phaser.Tilemap.TILED_JSON);
+ 
 
     },
 
@@ -29,7 +21,7 @@ var GameState = {
         // Colida com todos, menos esses aqui
         this.level1.setCollisionByExclusion([9, 10, 11, 12, 17, 18, 19, 20], true, this.wallsLayer);
         this.level1.setCollision([5, 6, 13], true, this.lavaLayer);
-
+        
         //Ativando audio
         this.jumpSound = this.game.add.audio('jumpSound');
         this.pickUp = this.game.add.audio('pickUp');

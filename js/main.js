@@ -4,7 +4,9 @@ var Globals = {
 };
 
 var game = new Phaser.Game(640, 480, Phaser.AUTO, 'phaser-canvas');
+game.state.add('boot', BootState);
+game.state.add('start', StartState);
 game.state.add('game', GameState);
 game.state.add('win', WinState);
 game.state.add('lose', LoseState);
-game.state.start('game');
+game.state.start('boot');
