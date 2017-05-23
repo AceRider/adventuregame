@@ -1,12 +1,13 @@
 "use strict";
 var timer;
-var preview = false;
-
+var preview = true;
+var layerWidth = 0;
+var layerHeight = 0;
 
 var GameState = {
 
     preload: function () {
-
+        console.log(this.camera);
 
     },
 
@@ -15,6 +16,9 @@ var GameState = {
 
         this.level1 = this.game.add.tilemap('level1');
         this.level1.addTilesetImage('tiles', 'mapTiles');
+
+        layerWidth = this.level1.widthInPixels;
+        layerHeight = this.level1.heightInPixels;
 
         this.bgLayer = this.level1.createLayer('BG');
         this.lavaLayer = this.level1.createLayer('Lava');
@@ -122,6 +126,7 @@ var GameState = {
             this.game.physics.arcade.isPaused = true;
             this.cameraPreview();
         } else {
+            this.game.physics.arcade.isPaused = false;
             this.game.camera.follow(this.player);
             this.playerController();
         }
@@ -203,9 +208,15 @@ var GameState = {
     },
     cameraPreview: function () {
         timer = game.time.create(false);
-        timer.loop(500, () => {
-            console.log(this.game.camera.y);
-            this.game.camera.y++;
+
+        timer.loop(200, () => {
+            if(preview){
+                this.game.camera.x++;
+            }
+            if (this.game.camera.atLimit.x) {
+                preview=false;
+            }
+
         }, this);
         timer.start();
     }
