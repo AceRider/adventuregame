@@ -1,9 +1,12 @@
 "use strict";
+var timer;
+var preview = false;
+
 
 var GameState = {
 
     preload: function () {
- 
+
 
     },
 
@@ -21,7 +24,7 @@ var GameState = {
         // Colida com todos, menos esses aqui
         this.level1.setCollisionByExclusion([9, 10, 11, 12, 17, 18, 19, 20], true, this.wallsLayer);
         this.level1.setCollision([5, 6, 13], true, this.lavaLayer);
-        
+
         //Ativando audio
         this.jumpSound = this.game.add.audio('jumpSound');
         this.pickUp = this.game.add.audio('pickUp');
@@ -39,7 +42,7 @@ var GameState = {
         this.game.physics.enable(this.player);
         this.player.body.gravity.y = 750;
         this.player.body.collideWorldBounds = true;
-        this.game.camera.follow(this.player);
+
 
         //Animações do jogador
         this.player.animations.add('walk', [0, 1, 2, 1], 6);
@@ -62,13 +65,13 @@ var GameState = {
             diamond.animations.play('spin');
         });
 
-        this.specialpoints = this.game.add.physicsGroup();
-        this.level1.createFromObjects('Items', 'specialpoints', 'items', 2, true, false, this.specialpoints);
-        this.specialpoints.forEach(function (specialpoints) {
-            specialpoints.anchor.setTo(0.5, 0.5);
-            specialpoints.body.immovable = true;
-            specialpoints.animations.add('spin', [0, 1, 2, 1, 0], 6, true);
-            specialpoints.animations.play('spin');
+        this.specialPoints = this.game.add.physicsGroup();
+        this.level1.createFromObjects('Items', 'specialpoints', 'items', 2, true, false, this.specialPoints);
+        this.specialPoints.forEach(function (specialPoints) {
+            specialPoints.anchor.setTo(0.5, 0.5);
+            specialPoints.body.immovable = true;
+            specialPoints.animations.add('spin', [0, 1, 2, 1, 0], 6, true);
+            specialPoints.animations.play('spin');
         });
 
         //Grupo - bats
@@ -91,62 +94,36 @@ var GameState = {
 
         this.scoreSpecialText = this.game.add.text(570, 50, "0/0", { font: "30px Arial", fill: "#ffffff" });
         this.scoreSpecialText.fixedToCamera = true;
-        this.scoreSpecial = this.game.add.sprite(540, 50,"items");
-        this.scoreSpecial.frame=2;
+        this.scoreSpecial = this.game.add.sprite(540, 50, "items");
+        this.scoreSpecial.frame = 2;
         this.scoreSpecial.fixedToCamera = true;
 
         //Game state
         this.totalDiamonds = this.diamonds.length;
         this.collectedDiamonds = 0;
-        this.totalspecialpoints = this.specialpoints.length;
+        this.totalspecialPoints = this.specialPoints.length;
         this.collectedSpecialPoints = 0;
         this.score = 0;
 
     },
 
     update: function () {
+
         this.game.physics.arcade.collide(this.player, this.wallsLayer);
         this.game.physics.arcade.collide(this.bats, this.wallsLayer);
         this.game.physics.arcade.collide(this.player, this.lavaLayer, this.lavaDeath, null, this);
         this.game.physics.arcade.overlap(this.player, this.diamonds, this.diamondCollect, null, this);
-        this.game.physics.arcade.overlap(this.player, this.specialpoints, this.specialPointsCollect, null, this);
+        this.game.physics.arcade.overlap(this.player, this.specialPoints, this.specialPointsCollect, null, this);
         this.game.physics.arcade.overlap(this.player, this.bats, this.batCollision, null, this);
 
-        this.scoreSpecialText.text = this.collectedSpecialPoints+"/"+this.totalspecialpoints;
+        this.scoreSpecialText.text = this.collectedSpecialPoints + "/" + this.totalspecialPoints;
 
-        if (this.keys.left.isDown) {
-            this.player.body.velocity.x = -150; // Ajustar velocidade
-            // Se o jogador estiver virado para a direita, inverter a escala para que ele vire para o outro lado
-            if (this.player.scale.x == 1) this.player.scale.x = -1;
-            this.player.animations.play('walk');
-
-        }
-        // Se a tecla direita estiver pressionada (this.keys.right.isDown == true),
-        // mover o sprite para a direita
-        else if (this.keys.right.isDown) {
-            // se a tecla direita estiver pressionada
-            this.player.body.velocity.x = 150;  // Ajustar velocidade
-            // Se o jogador estiver virado para a direita, inverter a escala para que ele vire para o outro lado
-            if (this.player.scale.x == -1) this.player.scale.x = 1;
-            this.player.animations.play('walk');
-        }
-        else {
-            // Se nenhuma tecla estiver sendo pressionada:
-            // Ajustar velocidade para zero
-            this.player.body.velocity.x = 0;
-            // Executar animação 'idle'
-            this.player.animations.play('idle');
-        }
-
-        // Se o a barra de espaço ou a tecla cima estiverem pressionadas, e o jogador estiver com a parte de baixo tocando em alguma coisa
-        if ((this.jumpButton.isDown || this.keys.up.isDown) && (this.player.body.touching.down || this.player.body.onFloor())) {
-            // Adicione uma velocidade no eixo Y, fazendo o jogador pular
-            this.player.body.velocity.y = -400;
-            this.jumpSound.play();
-        }
-
-        if (!this.player.body.touching.down && !this.player.body.onFloor()) {
-            this.player.animations.play('jump');
+        if (preview) {
+            this.game.physics.arcade.isPaused = true;
+            this.cameraPreview();
+        } else {
+            this.game.camera.follow(this.player);
+            this.playerController();
         }
 
         this.bats.forEach(function (bat) {
@@ -169,18 +146,18 @@ var GameState = {
         this.pickUp.play();
         diamond.kill();
     },
-    specialPointsCollect: function (player, specialpoints) {
+    specialPointsCollect: function (player, specialPoints) {
         this.collectedSpecialPoints++;
         this.score += 3000;
         this.scoreText.text = "Score: " + this.score;
-        if (this.collectedSpecialPoints == this.totalspecialpoints) {
+        if (this.collectedSpecialPoints == this.totalspecialPoints) {
             console.log('GANHOU');
             Globals.score = this.score;
             this.game.state.start('win');
         }
         this.player.body.velocity.y = -400;
         this.pickUp.play();
-        specialpoints.kill();
+        specialPoints.kill();
     },
     batCollision: function (player, bat) {
         if (player.body.touching.down && bat.body.touching.up) {
@@ -196,6 +173,41 @@ var GameState = {
     lavaDeath: function (player, lava) {
         console.debug('MORREU');
         this.game.state.start('lose');
+    },
+    playerController: function () {
+        if (this.keys.left.isDown) {
+            this.player.body.velocity.x = -150;
+            if (this.player.scale.x == 1) {
+                this.player.scale.x = -1;
+            }
+            this.player.animations.play('walk');
+
+        } else if (this.keys.right.isDown) {
+            this.player.body.velocity.x = 150;
+            if (this.player.scale.x == -1) {
+                this.player.scale.x = 1;
+            }
+            this.player.animations.play('walk');
+        } else {
+            this.player.body.velocity.x = 0;
+            this.player.animations.play('idle');
+        }
+        if ((this.jumpButton.isDown || this.keys.up.isDown) && (this.player.body.touching.down || this.player.body.onFloor())) {
+            this.player.body.velocity.y = -400;
+            this.jumpSound.play();
+        }
+
+        if (!this.player.body.touching.down && !this.player.body.onFloor()) {
+            this.player.animations.play('jump');
+        }
+    },
+    cameraPreview: function () {
+        timer = game.time.create(false);
+        timer.loop(500, () => {
+            console.log(this.game.camera.y);
+            this.game.camera.y++;
+        }, this);
+        timer.start();
     }
 };
 /*
