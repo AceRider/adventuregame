@@ -53,7 +53,6 @@ var GameState = {
         this.player.animations.add('idle', [5, 5, 5, 5, 5, 5, 6, 5, 6, 5], 6);
         this.player.animations.add('jump', [4], 6);
 
-        this.keys = this.game.input.keyboard.createCursorKeys();
         this.jumpButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
         //Grupo - diamonds
@@ -128,7 +127,8 @@ var GameState = {
         } else {
             this.game.physics.arcade.isPaused = false;
             this.game.camera.follow(this.player);
-            this.playerController();
+            new playerController(this);
+          //  this.playerController();
         }
 
         this.bats.forEach(function (bat) {
@@ -178,33 +178,6 @@ var GameState = {
     lavaDeath: function (player, lava) {
         console.debug('MORREU');
         this.game.state.start('lose');
-    },
-    playerController: function () {
-        if (this.keys.left.isDown) {
-            this.player.body.velocity.x = -150;
-            if (this.player.scale.x == 1) {
-                this.player.scale.x = -1;
-            }
-            this.player.animations.play('walk');
-
-        } else if (this.keys.right.isDown) {
-            this.player.body.velocity.x = 150;
-            if (this.player.scale.x == -1) {
-                this.player.scale.x = 1;
-            }
-            this.player.animations.play('walk');
-        } else {
-            this.player.body.velocity.x = 0;
-            this.player.animations.play('idle');
-        }
-        if ((this.jumpButton.isDown || this.keys.up.isDown) && (this.player.body.touching.down || this.player.body.onFloor())) {
-            this.player.body.velocity.y = -400;
-            this.jumpSound.play();
-        }
-
-        if (!this.player.body.touching.down && !this.player.body.onFloor()) {
-            this.player.animations.play('jump');
-        }
     },
     cameraPreview: function () {
         timer = game.time.create(false);
