@@ -1,5 +1,4 @@
 "use strict";
-var timer;
 var preview = true;
 var layerWidth = 0;
 var layerHeight = 0;
@@ -123,12 +122,11 @@ var GameState = {
 
         if (preview) {
             this.game.physics.arcade.isPaused = true;
-            this.cameraPreview();
+            new cameraController(200, this);
         } else {
             this.game.physics.arcade.isPaused = false;
             this.game.camera.follow(this.player);
             new playerController(this);
-          //  this.playerController();
         }
 
         this.bats.forEach(function (bat) {
@@ -139,59 +137,16 @@ var GameState = {
 
     },
     diamondCollect: function (player, diamond) {
-        this.collectedDiamonds++;
-        this.score += 100;
-        this.scoreText.text = "Score: " + this.score;
-        if (this.collectedDiamonds == this.totalDiamonds) {
-            console.log('GANHOU');
-            Globals.score = this.score;
-            this.game.state.start('win');
-        }
-        this.player.body.velocity.y = -400;
-        this.pickUp.play();
-        diamond.kill();
+        new Collision.collect(player, diamond, this);
     },
     specialPointsCollect: function (player, specialPoints) {
-        this.collectedSpecialPoints++;
-        this.score += 3000;
-        this.scoreText.text = "Score: " + this.score;
-        if (this.collectedSpecialPoints == this.totalspecialPoints) {
-            console.log('GANHOU');
-            Globals.score = this.score;
-            this.game.state.start('win');
-        }
-        this.player.body.velocity.y = -400;
-        this.pickUp.play();
-        specialPoints.kill();
+        new Collision.collect(player, specialPoints, this);
     },
     batCollision: function (player, bat) {
-        if (player.body.touching.down && bat.body.touching.up) {
-            this.enemyDeath.play();
-            this.player.body.velocity.y = -200;
-            this.score += 100;
-            this.scoreText.text = "Score: " + this.score;
-            bat.kill();
-        } else {
-            this.game.state.start('lose');
-        }
+        new Collision.collect(player, bat, this);
     },
     lavaDeath: function (player, lava) {
-        console.debug('MORREU');
-        this.game.state.start('lose');
-    },
-    cameraPreview: function () {
-        timer = game.time.create(false);
-
-        timer.loop(200, () => {
-            if(preview){
-                this.game.camera.x++;
-            }
-            if (this.game.camera.atLimit.x) {
-                preview=false;
-            }
-
-        }, this);
-        timer.start();
+        new Collision.death(player, lava, this);
     }
 };
 /*
