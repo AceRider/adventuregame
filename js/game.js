@@ -6,7 +6,7 @@ var layerHeight = 0;
 var GameState = {
 
     preload: function () {
-        console.log(this.camera);
+        // console.log(this.camera);
 
     },
 
@@ -122,7 +122,7 @@ var GameState = {
 
         if (preview) {
             this.game.physics.arcade.isPaused = true;
-            new cameraController(200, this);
+            new cameraController(500, this);
         } else {
             this.game.physics.arcade.isPaused = false;
             this.game.camera.follow(this.player);
