@@ -113,6 +113,7 @@ var GameState = {
 
         this.game.physics.arcade.collide(this.player, this.wallsLayer);
         this.game.physics.arcade.collide(this.bats, this.wallsLayer);
+        this.game.physics.arcade.collide(this.bats, this.lavaLayer);
         this.game.physics.arcade.collide(this.player, this.lavaLayer, this.lavaDeath, null, this);
         this.game.physics.arcade.overlap(this.player, this.diamonds, this.diamondCollect, null, this);
         this.game.physics.arcade.overlap(this.player, this.specialPoints, this.specialPointsCollect, null, this);
@@ -147,7 +148,15 @@ var GameState = {
     },
     lavaDeath: function (player, lava) {
         new Collision.death(player, lava, this);
-    }
+    }//,
+   // restart: function(){
+        //restart = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
+    //    this.game.input.keyboard.addKey(Phaser.Keyboard.R),
+    //    self.keys = self.game.input.keyboard.createCursorKeys();
+    //    if (self.keys..isDown) {
+    //       game.state.start('game'); 
+    //    }
+   // }
 };
 /*
 Trabalho Prático 2 26/maio
