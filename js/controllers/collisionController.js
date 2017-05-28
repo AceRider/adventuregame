@@ -7,7 +7,7 @@ var Collision = {
             if (self.collectedDiamonds == self.totalDiamonds) {
                 console.log('GANHOU');
                 Globals.score = self.score;
-                self.game.state.start('win');
+                self.game.state.start('game',true,false, {nextLevel:currentLevel+1});
             }
             self.player.body.velocity.y = -400;
             self.pickUp.play();
@@ -19,7 +19,7 @@ var Collision = {
             if (self.collectedSpecialPoints == self.totalspecialPoints) {
                 console.log('GANHOU');
                 Globals.score = self.score;
-                self.game.state.start('win');
+                self.game.state.start('game',true,false, {nextLevel:currentLevel+1}); 
             }
             self.player.body.velocity.y = -400;
             self.pickUp.play();
@@ -38,6 +38,6 @@ var Collision = {
     },
     death: function (player, diamond, self) {
         console.debug('MORREU');
-        self.game.state.start('lose');
+        self.game.state.start('game',true,false, {died:true});
     }
 }

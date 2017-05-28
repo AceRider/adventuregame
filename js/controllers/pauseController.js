@@ -1,24 +1,28 @@
 function pauseController(self) {
     
     var w = 640, h = 480;
-    
+    var choiseLabel;
     
     // Create a label to use as a button
         pause_label = self.game.add.text(w - 100, 20, 'Pause', fontConfig);
         pause_label.fixedToCamera = true;
         pause_label.inputEnabled = true;
     
-     var pause = self.game.input.keyboard.addKey(Phaser.Keyboard.P);
-        //if (pause.isDown) {
-          // game.state.start('game'); 
-       //     console.log("paused");
-       // }else{
-       //     console.log("un paused");
-      //  }
     
-        pause_label.events.onInputUp.add(function () {
+        window.onkeydown = function(event) {
+            if (event.keyCode == 80){
+                self.game.paused = !self.game.paused;
+                if(self.game.paused){
+                    pauseLabel();
+                }else{
+                    unpause(event);        
+                }
+            }
+        };
+    
+        function pauseLabel() {
             // When the paus button is pressed, we pause the game
-            self.game.paused = true;
+                
            // self.game.physics.arcade.isPaused = true;
 
             // Then add the menu
@@ -29,15 +33,13 @@ function pauseController(self) {
             choiseLabel = self.game.add.text(w/2, h-150, 'Game Paused', fontConfig);
             choiseLabel.anchor.setTo(0.5, 0.5);
             choiseLabel.fixedToCamera = true;
-        });
+        };
 
         // Add a input listener that can help us return from being paused
         self.game.input.onDown.add(unpause, self);
 
         // And finally the method that handels the pause menu
         function unpause(event){
-            // Only act if paused
-            if(self.game.paused){
                 // Calculate the corners of the menu
                 var x1 = w/2 - 270/2, x2 = w/2 + 270/2,
                     y1 = h/2 - 180/2, y2 = h/2 + 180/2;
@@ -58,15 +60,10 @@ function pauseController(self) {
 
                     // Display the choice
                   //  choiseLabel.text = 'You chose menu item: ' + choisemap[choise];
-                }else{
-                    // Remove the menu and the label
-                   // menu.destroy();
-                    choiseLabel.destroy();
-
-                    // Unpause the game
-                    self.game.paused = false;
-                   //  self.game.physics.arcade.isPaused = false;
                 }
-            }
-    };
+                    // Remove \the menu and the label
+                   // menu.destroy();
+                choiseLabel.destroy();
+                    
+            };
 }

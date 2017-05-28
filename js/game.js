@@ -2,8 +2,23 @@
 var preview = true;
 var layerWidth = 0;
 var layerHeight = 0;
-
+var currentLevel = 1;
+var maxLevel = 2;
 var GameState = {
+    init:function(params){
+        console.log(params);
+        if(params){
+            currentLevel = (params.nextLevel)?params.nextLevel:currentLevel;
+            if(currentLevel>maxLevel){
+                game.state.start('win'); 
+            }
+            var died = (params.died)?params.died:false;
+            if(died){
+                game.state.start('lose'); 
+            }
+        }
+        
+    },
 
     preload: function () {
         // console.log(this.camera);
@@ -13,20 +28,20 @@ var GameState = {
     create: function () {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
-        this.level1 = this.game.add.tilemap('level3');
-        this.level1.addTilesetImage('tiles', 'mapTiles');
+        this.level = this.game.add.tilemap('level'+currentLevel);
+        this.level.addTilesetImage('tiles', 'mapTiles');
 
-        layerWidth = this.level1.widthInPixels;
-        layerHeight = this.level1.heightInPixels;
+        layerWidth = this.level.widthInPixels;
+        layerHeight = this.level.heightInPixels;
 
-        this.bgLayer = this.level1.createLayer('BG');
-        this.lavaLayer = this.level1.createLayer('Lava');
-        this.wallsLayer = this.level1.createLayer('Walls');
+        this.bgLayer = this.level.createLayer('BG');
+        this.lavaLayer = this.level.createLayer('Lava');
+        this.wallsLayer = this.level.createLayer('Walls');
         this.wallsLayer.resizeWorld();
 
         // Colida com todos, menos esses aqui
-        this.level1.setCollisionByExclusion([9, 10, 11, 12, 17, 18, 19, 20], true, this.wallsLayer);
-        this.level1.setCollision([5, 6, 13], true, this.lavaLayer);
+        this.level.setCollisionByExclusion([9, 10, 11, 12, 17, 18, 19, 20], true, this.wallsLayer);
+        this.level.setCollision([5, 6, 13], true, this.lavaLayer);
 
         //Ativando audio
         this.jumpSound = this.game.add.audio('jumpSound');
@@ -59,7 +74,7 @@ var GameState = {
         //Criando objetos do Tiled
         //Parametros
         //layer do Tiled, nome do objeto no Tiled, spritesheet, frame, true, false, grupo
-        this.level1.createFromObjects('Items', 'diamond', 'items', 5, true, false, this.diamonds);
+        this.level.createFromObjects('Items', 'diamond', 'items', 5, true, false, this.diamonds);
         this.diamonds.forEach(function (diamond) {
             diamond.anchor.setTo(0.5, 0.5);
             diamond.body.immovable = true;
@@ -68,7 +83,7 @@ var GameState = {
         });
 
         this.specialPoints = this.game.add.physicsGroup();
-        this.level1.createFromObjects('Items', 'specialpoints', 'items', 2, true, false, this.specialPoints);
+        this.level.createFromObjects('Items', 'specialpoints', 'items', 2, true, false, this.specialPoints);
         this.specialPoints.forEach(function (specialPoints) {
             specialPoints.anchor.setTo(0.5, 0.5);
             specialPoints.body.immovable = true;
@@ -81,7 +96,7 @@ var GameState = {
         //Criando objetos do Tiled
         //Parametros
         //layer do Tiled, nome do objeto no Tiled, spritesheet, frame, true, false, grupo
-        this.level1.createFromObjects('Enemies', 'bat', 'enemies', 8, true, false, this.bats);
+        this.level.createFromObjects('Enemies', 'bat', 'enemies', 8, true, false, this.bats);
         this.bats.forEach(function (bat) {
             bat.anchor.setTo(0.5, 0.5);
             bat.body.immovable = true;
@@ -112,8 +127,6 @@ var GameState = {
         this.collectedSpecialPoints = 0;
         this.score = 0;
         
-        new pauseController(this);
-
     },
 
     update: function () {
@@ -142,7 +155,8 @@ var GameState = {
                 bat.scale.x = 1 * Math.sign(bat.body.velocity.x);
             }
         });
-        
+          new pauseController(this);
+
         var restart = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
         if (restart.isDown) {
            game.state.start('game'); 
