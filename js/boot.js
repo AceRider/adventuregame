@@ -10,6 +10,11 @@
 //As funções sempre começam com NomeDoObjeto.prototype 
 var BootState = function(game) {};
 
+var fontConfig =  { 
+    font : 'Press Start 2P',
+    fontSize : 20,
+    fill: "#ffffff" };
+
 // preload: carregar todos os assets necessários para esta scene ou para as próximas
 BootState.prototype.preload = function() {
     // Não há nenhum asset a ser carregado aqui, então a função fica vazia
@@ -23,6 +28,8 @@ BootState.prototype.preload = function() {
     this.game.load.audio('music', 'Assets/sounds/mystery.wav');
     this.game.load.tilemap('level1', 'Assets/maps/level1.json', null, Phaser.Tilemap.TILED_JSON);
     this.game.load.tilemap('level2', 'Assets/maps/level2.json', null, Phaser.Tilemap.TILED_JSON);
+    this.game.load.tilemap('level3', 'Assets/maps/level3.json', null, Phaser.Tilemap.TILED_JSON);
+    
 }
 
 // create: instanciar e inicializar todos os objetos dessa scene

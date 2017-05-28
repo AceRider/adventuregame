@@ -13,7 +13,7 @@ var GameState = {
     create: function () {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
-        this.level1 = this.game.add.tilemap('level1');
+        this.level1 = this.game.add.tilemap('level3');
         this.level1.addTilesetImage('tiles', 'mapTiles');
 
         layerWidth = this.level1.widthInPixels;
@@ -91,14 +91,19 @@ var GameState = {
             bat.body.bounce.x = 1;
         });
 
-        this.scoreText = this.game.add.text(100, 50, "Score: 0", { font: "30px Arial", fill: "#ffffff" });
+        this.scoreText = this.game.add.text(100, 50, "Score: 0", fontConfig);
         this.scoreText.fixedToCamera = true;
+      
 
-        this.scoreSpecialText = this.game.add.text(570, 50, "0/0", { font: "30px Arial", fill: "#ffffff" });
+        this.scoreSpecialText = this.game.add.text(570, 50, "0/0", fontConfig);
         this.scoreSpecialText.fixedToCamera = true;
         this.scoreSpecial = this.game.add.sprite(540, 50, "items");
         this.scoreSpecial.frame = 2;
         this.scoreSpecial.fixedToCamera = true;
+        
+        
+        this.helpText = this.game.add.text(100, 430, "'R' to restart", fontConfig);
+        this.helpText.fixedToCamera = true;
 
         //Game state
         this.totalDiamonds = this.diamonds.length;
@@ -106,6 +111,8 @@ var GameState = {
         this.totalspecialPoints = this.specialPoints.length;
         this.collectedSpecialPoints = 0;
         this.score = 0;
+        
+        new pauseController(this);
 
     },
 
@@ -121,21 +128,26 @@ var GameState = {
 
         this.scoreSpecialText.text = this.collectedSpecialPoints + "/" + this.totalspecialPoints;
 
-        if (preview) {
-            this.game.physics.arcade.isPaused = true;
-            new cameraController(500, this);
-        } else {
-            this.game.physics.arcade.isPaused = false;
+    //    if (preview) {
+       //     this.game.physics.arcade.isPaused = true;
+     //       new cameraController(500, this);
+       // } else {
+           // this.game.physics.arcade.isPaused = false;
             this.game.camera.follow(this.player);
             new playerController(this);
-        }
+       // }
 
         this.bats.forEach(function (bat) {
             if (bat.body.velocity.x != 0) {
                 bat.scale.x = 1 * Math.sign(bat.body.velocity.x);
             }
         });
-
+        
+        var restart = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
+        if (restart.isDown) {
+           game.state.start('game'); 
+        }
+       
     },
     diamondCollect: function (player, diamond) {
         new Collision.collect(player, diamond, this);
@@ -148,15 +160,7 @@ var GameState = {
     },
     lavaDeath: function (player, lava) {
         new Collision.death(player, lava, this);
-    }//,
-   // restart: function(){
-        //restart = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
-    //    this.game.input.keyboard.addKey(Phaser.Keyboard.R),
-    //    self.keys = self.game.input.keyboard.createCursorKeys();
-    //    if (self.keys..isDown) {
-    //       game.state.start('game'); 
-    //    }
-   // }
+    }
 };
 /*
 Trabalho Prático 2 26/maio
