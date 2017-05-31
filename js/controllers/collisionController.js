@@ -1,9 +1,10 @@
 var Collision = {
     collect: function (player, object, self) {
-        if (object.name == "diamond") {
+        if (object.name == "gold" || object.name == "gold2") {
             self.collectedDiamonds++;
             self.score += 100;
             self.scoreText.text = "Score: " + self.score;
+            console.log(self.collectedDiamonds+"/"+self.totalDiamonds);
             if (self.collectedDiamonds == self.totalDiamonds) {
                 console.log('GANHOU');
                 Globals.score = self.score;
@@ -12,7 +13,7 @@ var Collision = {
             self.player.body.velocity.y = -400;
             self.pickUp.play();
         }
-        else if (object.name == "specialpoints") {
+        else if (object.name == "diamond") {
             self.collectedSpecialPoints++;
             self.score += 3000;
             self.scoreText.text = "Score: " + self.score;
@@ -33,6 +34,8 @@ var Collision = {
             } else {
                 Collision.death(player, object, self);
             }
+        }else{
+            console.log("Não mapeado ",object);
         }
         object.kill();
     },

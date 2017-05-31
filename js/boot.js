@@ -19,9 +19,9 @@ var fontConfig =  {
 BootState.prototype.preload = function() {
     // Não há nenhum asset a ser carregado aqui, então a função fica vazia
     this.game.load.spritesheet('player', 'Assets/spritesheets/player.png', 32, 32, 8);
-    this.game.load.spritesheet('items', 'Assets/spritesheets/items.png', 32, 32, 16);
+    this.game.load.spritesheet('items', 'Assets/spritesheets/items2.png', 32, 32, 3);
     this.game.load.spritesheet('enemies', 'Assets/spritesheets/enemies.png', 32, 32, 112);
-    this.game.load.image('mapTiles', 'Assets/spritesheets/tiles.png');
+    this.game.load.image('mapTiles', 'Assets/spritesheets/cenario2.png');
     this.game.load.audio('jumpSound', 'Assets/sounds/jump.wav');
     this.game.load.audio('pickUp', 'Assets/sounds/pickup.wav');
     this.game.load.audio('enemyDeath', 'Assets/sounds/hit2.ogg');
