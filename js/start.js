@@ -22,7 +22,7 @@ StartState.prototype.create = function () {
     var s = game.add.sprite(0, 0, 'menu');
     this.start = game.add.sprite(310, 320, 'btnplay');
     this.start .anchor.setTo(0.5,0.5);
-    this.credits = this.game.add.text(300, 400, 'Credits', fontCredits);
+    this.credits = this.game.add.text(50, 470, 'Credits', fontCredits);
     this.credits .anchor.setTo(0.5,0.5);
 
     this.start.inputEnabled = true;
