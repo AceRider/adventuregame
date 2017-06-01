@@ -2,7 +2,7 @@
 var preview = true;
 var layerWidth = 0;
 var layerHeight = 0;
-var currentLevel = 2;
+var currentLevel = 1;
 var maxLevel = 2;
 var isGamePlaying = false;
 var GameState = {
@@ -30,7 +30,6 @@ var GameState = {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         this.level = this.game.add.tilemap('level' + currentLevel);
-        console.log(this.level);
         this.level.addTilesetImage('tiles', 'mapTiles');
 
         layerWidth = this.level.widthInPixels;
