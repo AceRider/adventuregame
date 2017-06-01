@@ -35,6 +35,7 @@
         }, 
         {
          "draworder":"topdown",
+         "height":0,
          "name":"Enemies",
          "objects":[
                 {
@@ -148,11 +149,13 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
+         "width":0,
          "x":0,
          "y":0
         }, 
         {
          "draworder":"topdown",
+         "height":0,
          "name":"Items",
          "objects":[
                 {
@@ -950,6 +953,7 @@
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
+         "width":0,
          "x":0,
          "y":0
         }],
@@ -998,7 +1002,6 @@
          "tilewidth":32
         }],
  "tilewidth":32,
- "type":"map",
- "version":"2017.05.09",
+ "version":1,
  "width":32
 }
