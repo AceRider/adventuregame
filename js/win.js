@@ -12,7 +12,8 @@ var WinState = function(game) {};
 
 // preload: carregar todos os assets necessários para esta scene ou para as próximas
 WinState.prototype.preload = function() {
-    // Não há nenhum asset a ser carregado aqui, então a função fica vazia
+       game.load.image('win', 'Assets/telas/Dungeons-and-Gold.png');
+
 }
 
 // create: instanciar e inicializar todos os objetos dessa scene

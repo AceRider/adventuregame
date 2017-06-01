@@ -12,12 +12,12 @@ var StartState = function(game) {};
 
 // preload: carregar todos os assets necessários para esta scene ou para as próximas
 StartState.prototype.preload = function() {
-    // Não há nenhum asset a ser carregado aqui, então a função fica vazia
+        game.load.image('menu', 'Assets/telas/Dungeons-and-Gold-INICIAL.png');
 }
 
 // create: instanciar e inicializar todos os objetos dessa scene
 StartState.prototype.create = function() {
-    this.game.add.text(100, 200, "Dungeons & Gold", fontTitle);
+    var s = game.add.sprite(0, 0, 'menu');
     this.start = this.game.add.text(250, 300, "Start Game", fontCredits);
     this.credits = this.game.add.text(250, 340, 'Credits', fontCredits);
    

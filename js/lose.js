@@ -13,7 +13,7 @@ var LoseState = function(game) {};
 
 // preload: carregar todos os assets necessários para esta scene ou para as próximas
 LoseState.prototype.preload = function() {
-    // Não há nenhum asset a ser carregado aqui, então a função fica vazia
+    game.load.image('gameover', 'Assets/telas/Dungeons-and-Gold---GAME-OVER.png');
 }
 
 LoseState.prototype.init= function (params) {
@@ -25,7 +25,7 @@ LoseState.prototype.init= function (params) {
 
 // create: instanciar e inicializar todos os objetos dessa scene
 LoseState.prototype.create = function() {
-    this.game.add.text(200, 200, "You Lose :(", {font: "35px Arial", fill: "#ffffff"});
+     var s = game.add.sprite(0, 0, 'gameover');
     this.returnKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 }
 
