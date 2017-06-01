@@ -201,6 +201,7 @@ var GameState = {
 
         var restart = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
         if (restart.isDown) {
+            this.music.stop();
             game.state.start('game');
         }
 
