@@ -16,7 +16,7 @@ var GameState = {
             }
             var died = (params.died) ? params.died : false;
             if (died) {
-                game.state.start('lose',true,false,{currentLevel:currentLevel});
+                game.state.start('lose', true, false, { currentLevel: currentLevel });
             }
         }
 
@@ -24,7 +24,7 @@ var GameState = {
 
     preload: function () {
         // console.log(this.camera);
-        this.game.load.tilemap('level'+currentLevel, 'Assets/maps/level'+currentLevel+'.json', null, Phaser.Tilemap.TILED_JSON);
+        this.game.load.tilemap('level' + currentLevel, 'Assets/maps/level' + currentLevel + '.json', null, Phaser.Tilemap.TILED_JSON);
     },
 
     create: function () {
@@ -56,12 +56,12 @@ var GameState = {
         //BG Music
         this.music = this.game.add.audio('music');
         this.music.loop = true;
-        
-        if (!isGamePlaying) {  
+
+        if (!isGamePlaying) {
             //console.log('music plays');
-           this.music.play();
+            this.music.play();
         }
-        
+
         // Player
         // Inicializando jogador  
         this.player = this.game.add.sprite(160, 64, 'player', 5);
@@ -109,18 +109,35 @@ var GameState = {
         });
 
         //Grupo - bats
-        this.bats = this.game.add.physicsGroup();
-        //Criando objetos do Tiled
-        //Parametros
-        //layer do Tiled, nome do objeto no Tiled, spritesheet, frame, true, false, grupo
-        this.level.createFromObjects('Enemies', 'bat', 'enemies', 8, true, false, this.bats);
-        this.bats.forEach(function (bat) {
-            bat.anchor.setTo(0.5, 0.5);
-            bat.body.immovable = true;
-            bat.animations.add('fly', [8, 9, 10], 6, true);
-            bat.animations.play('fly');
-            bat.body.velocity.x = 100;
-            bat.body.bounce.x = 1;
+        this.skeleton = this.game.add.physicsGroup();
+        this.level.createFromObjects('Enemies', 'skeleton', 'enemies', 6, true, false, this.skeleton);
+        this.skeleton.forEach(function (enemy) {
+            enemy.anchor.setTo(0.5, 0.5);
+            enemy.body.immovable = true;
+            enemy.animations.add('fly', [6, 7, 8], 3, true);
+            enemy.animations.play('fly');
+            enemy.body.velocity.x = 100;
+            enemy.body.bounce.x = 1;
+        });
+        this.GreenEnemie = this.game.add.physicsGroup();
+        this.level.createFromObjects('Enemies', 'GreenEnemie', 'enemies', 0, true, false, this.GreenEnemie);
+        this.GreenEnemie.forEach(function (enemy) {
+            enemy.anchor.setTo(0.5, 0.5);
+            enemy.body.immovable = true;
+            enemy.animations.add('fly', [0, 1, 2], 3, true);
+            enemy.animations.play('fly');
+            enemy.body.velocity.x = 100;
+            enemy.body.bounce.x = 1;
+        });
+        this.PinkEnemie = this.game.add.physicsGroup();
+        this.level.createFromObjects('Enemies', 'PinkEnemie', 'enemies', 3, true, false, this.PinkEnemie);
+        this.PinkEnemie.forEach(function (enemy) {
+            enemy.anchor.setTo(0.5, 0.5);
+            enemy.body.immovable = true;
+            enemy.animations.add('fly', [3, 4, 5], 3, true);
+            enemy.animations.play('fly');
+            enemy.body.velocity.x = 100;
+            enemy.body.bounce.x = 1;
         });
 
         this.scoreText = this.game.add.text(100, 50, "Score: 0", fontConfig);
@@ -138,7 +155,7 @@ var GameState = {
         this.helpText.fixedToCamera = true;
 
         //Game state
-        this.totalDiamonds = this.normalPoints.length+this.normalPoints2.length;
+        this.totalDiamonds = this.normalPoints.length + this.normalPoints2.length;
         console.log(this.totalDiamonds);
         this.collectedDiamonds = 0;
         this.totalspecialPoints = this.specialPoints.length;
@@ -150,14 +167,21 @@ var GameState = {
     update: function () {
 
         this.game.physics.arcade.collide(this.player, this.wallsLayer);
-        this.game.physics.arcade.collide(this.bats, this.wallsLayer);
-        this.game.physics.arcade.collide(this.bats, this.lavaLayer);
+        this.game.physics.arcade.collide(this.skeleton, this.wallsLayer);
+        this.game.physics.arcade.collide(this.skeleton, this.lavaLayer);
+        this.game.physics.arcade.collide(this.GreenEnemie, this.wallsLayer);
+        this.game.physics.arcade.collide(this.GreenEnemie, this.lavaLayer);
+        this.game.physics.arcade.collide(this.PinkEnemie, this.wallsLayer);
+        this.game.physics.arcade.collide(this.PinkEnemie, this.lavaLayer);
         this.game.physics.arcade.collide(this.player, this.lavaLayer, this.lavaDeath, null, this);
         this.game.physics.arcade.overlap(this.player, this.normalPoints, this.diamondCollect, null, this);
         this.game.physics.arcade.overlap(this.player, this.normalPoints2, this.diamondCollect, null, this);
 
         this.game.physics.arcade.overlap(this.player, this.specialPoints, this.specialPointsCollect, null, this);
-        this.game.physics.arcade.overlap(this.player, this.bats, this.batCollision, null, this);
+        this.game.physics.arcade.overlap(this.player, this.skeleton, this.batCollision, null, this);
+        this.game.physics.arcade.overlap(this.player, this.GreenEnemie, this.batCollision, null, this);
+        this.game.physics.arcade.overlap(this.player, this.PinkEnemie, this.batCollision, null, this);
+
 
         this.scoreSpecialText.text = this.collectedSpecialPoints + "/" + this.totalspecialPoints;
 
@@ -170,9 +194,9 @@ var GameState = {
         new playerController(this);
         // }
 
-        this.bats.forEach(function (bat) {
-            if (bat.body.velocity.x != 0) {
-                bat.scale.x = 1 * Math.sign(bat.body.velocity.x);
+        this.skeleton.forEach(function (enemy) {
+            if (enemy.body.velocity.x != 0) {
+                enemy.scale.x = 1 * Math.sign(enemy.body.velocity.x);
             }
         });
         new pauseController(this);

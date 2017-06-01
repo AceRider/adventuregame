@@ -5,8 +5,8 @@ var Collision = {
             self.score += 100;
             self.scoreText.text = "Score: " + self.score;
             console.log(self.collectedDiamonds+"/"+self.totalDiamonds);
-            //if (self.collectedDiamonds == self.totalDiamonds) {
-                if (1 == 1) {
+            if (self.collectedDiamonds == self.totalDiamonds) {
+            //    if (1 == 1) {
                 console.log('GANHOU');
                 Globals.score = self.score;
                 this.isPlaying = self.music.isPlaying;
@@ -27,7 +27,7 @@ var Collision = {
             self.player.body.velocity.y = -400;
             self.spPickUp.play();
         }
-        else if (object.name == "bat") {
+        else if (object.name == "skeleton" || object.name == "PinkEnemie" || object.name == "GreenEnemie") {
             if (player.body.touching.down && object.body.touching.up) {
                 self.enemyDeath.play();
                 self.player.body.velocity.y = -200;
