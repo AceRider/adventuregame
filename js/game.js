@@ -42,8 +42,8 @@ var GameState = {
         this.wallsLayer.resizeWorld();
 
         // Colida com todos, menos esses aqui
-        this.level.setCollisionByExclusion([9], true, this.wallsLayer);
-        this.level.setCollision([4, 10], true, this.lavaLayer);
+        this.level.setCollisionByExclusion([8,13,14,15,16], true, this.wallsLayer);
+        this.level.setCollision([1,2,3,4,5,6,19,20,21], true, this.lavaLayer);
 
         //Ativando audio
         this.jumpSound = this.game.add.audio('jumpSound');
