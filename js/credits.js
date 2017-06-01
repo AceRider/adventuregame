@@ -28,7 +28,6 @@ CreditsState.prototype.create = function() {
                 "Orientador: Prof. Bruno Araujo"
     
     this.textHelp = "Press any key to back";
-   // this.textHelp.anchor.x = Math.round(this.textHelp.width * 0.5) / this.textHelp.width;
     
     this.game.add.text(18, 50, this.text, fontCredits);
     this.game.add.text(380/2, 430, this.textHelp, fontCredits);
@@ -37,9 +36,14 @@ CreditsState.prototype.create = function() {
      window.onkeydown = function(event) {
         this.game.state.start('start');
      }
+     
+    this.game.input.mouse.capture = true;
+    this.returnKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 }
 
 // update: o que fazer a cada quadro por segundo
 CreditsState.prototype.update = function() {
- 
+   if(game.input.activePointer.leftButton.isDown || this.returnKey.isDown){
+        this.game.state.start('start');
+   }
 }

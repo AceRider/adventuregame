@@ -58,7 +58,7 @@ var GameState = {
         this.music.loop = true;
         
         if (!isGamePlaying) {  
-            console.log('music plays');
+            //console.log('music plays');
            this.music.play();
         }
         
@@ -134,7 +134,7 @@ var GameState = {
         this.scoreSpecial.fixedToCamera = true;
 
 
-        this.helpText = this.game.add.text(100, 430, "'R' to restart", fontConfig);
+        this.helpText = this.game.add.text(100, 430, "'R'-Restart\n'P'-Pause", fontHelp);
         this.helpText.fixedToCamera = true;
 
         //Game state

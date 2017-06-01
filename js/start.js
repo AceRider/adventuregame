@@ -17,25 +17,29 @@ StartState.prototype.preload = function() {
 
 // create: instanciar e inicializar todos os objetos dessa scene
 StartState.prototype.create = function() {
-    this.game.add.text(200, 200, "Dungeons & Gold", fontConfig);
-    this.start = this.game.add.text(180, 300, "Start Game", fontCredits);
-    this.credits = this.game.add.text(180, 330, 'Credits', fontCredits);
+    this.game.add.text(100, 200, "Dungeons & Gold", fontTitle);
+    this.start = this.game.add.text(250, 300, "Start Game", fontCredits);
+    this.credits = this.game.add.text(250, 340, 'Credits', fontCredits);
    
     this.start.inputEnabled = true;
     this.start.events.onInputUp.add(function () {
-    // this.game.state.start('game');
-     
+        game.state.start('game');
     });
     
-    this.game.input.mouse.capture = true;
-    this.returnKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
+    this.credits.inputEnabled = true;
+    this.credits.events.onInputUp.add(function () {
+        game.state.start('credits');
+    });
+    
+    //this.game.input.mouse.capture = true;
+    //this.returnKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
     
   
 }
 
 // update: o que fazer a cada quadro por segundo
 StartState.prototype.update = function() {
-    if(game.input.activePointer.leftButton.isDown || this.returnKey.isDown){
-        this.game.state.start('game');
-    }
+   // if(game.input.activePointer.leftButton.isDown || this.returnKey.isDown){
+   //     this.game.state.start('game');
+   // }
 }

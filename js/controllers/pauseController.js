@@ -4,27 +4,31 @@ function pauseController(self) {
     var choiseLabel;
     
     // Create a label to use as a button
-        pause_label = self.game.add.text(w - 100, 20, 'Pause', fontConfig);
-        pause_label.fixedToCamera = true;
-        pause_label.inputEnabled = true;
-    
+        //pause_label = self.game.add.text(w - 100, 20, 'Pause', fontConfig);
+       // pause_label.fixedToCamera = true;
+       // pause_label.inputEnabled = true;
+       // pause_label.events.onInputUp.add(pauseGame);
     
         window.onkeydown = function(event) {
             if (event.keyCode == 80){
-                self.pauseIn.play();
-               // setTimeout("funcao",1000);
-                self.game.paused = !self.game.paused;
-               // setTimeout(function(){
-                 //  self.game.paused=!self.game.paused;
-                //},1000);
-                
-                if(self.game.paused){
-                    pauseLabel();
-                }else{
-                    unpause(event);        
-                }
+               pauseGame();
             }
         };
+    
+        function pauseGame() {
+            self.pauseIn.play();
+           // setTimeout("funcao",1000);
+            self.game.paused = !self.game.paused;
+           // setTimeout(function(){
+             //  self.game.paused=!self.game.paused;
+            //},1000);
+
+            if(self.game.paused){
+                pauseLabel();
+            }else{
+                unpause(event);        
+            }
+        }
     
         function pauseLabel() {
             // When the paus button is pressed, we pause the game
@@ -36,7 +40,7 @@ function pauseController(self) {
             //menu.anchor.setTo(0.5, 0.5);
 
             // And a label to illustrate which menu item was chosen. (This is not necessary)
-            choiseLabel = self.game.add.text(w/2, h-150, 'Game Paused', fontConfig);
+            choiseLabel = self.game.add.text(w/2, h-280, 'Game Paused', fontConfig);
             choiseLabel.anchor.setTo(0.5, 0.5);
             choiseLabel.fixedToCamera = true;
             

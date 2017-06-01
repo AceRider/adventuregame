@@ -10,6 +10,11 @@
 //As funções sempre começam com NomeDoObjeto.prototype 
 var BootState = function(game) {};
 
+var fontTitle =  { 
+    font : 'Press Start 2P',
+    fontSize : 30,
+    fill: "#ffffff" };
+
 var fontConfig =  { 
     font : 'Press Start 2P',
     fontSize : 20,
@@ -18,6 +23,11 @@ var fontConfig =  {
 var fontCredits =  { 
     font : 'Press Start 2P',
     fontSize : 11,
+    fill: "#ffffff" };
+
+var fontHelp =  { 
+    font : 'Press Start 2P',
+    fontSize : 8,
     fill: "#ffffff" };
 
 // preload: carregar todos os assets necessários para esta scene ou para as próximas
