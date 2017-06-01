@@ -73,8 +73,8 @@ var GameState = {
 
         //Animações do jogador
         this.player.animations.add('walk', [0, 1, 2, 1], 6);
-        this.player.animations.add('idle', [5, 5, 5, 5, 5, 5, 6, 5, 6, 5], 6);
-        this.player.animations.add('jump', [4], 6);
+        this.player.animations.add('idle', [4, 4, 4, 4, 4, 4, 5, 4, 5, 4], 6);
+        this.player.animations.add('jump', [3], 6);
 
         this.jumpButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 
@@ -147,7 +147,7 @@ var GameState = {
         this.scoreSpecialText = this.game.add.text(570, 50, "0/0", fontConfig);
         this.scoreSpecialText.fixedToCamera = true;
         this.scoreSpecial = this.game.add.sprite(540, 50, "items");
-        this.scoreSpecial.frame = 2;
+        this.scoreSpecial.frame = 3;
         this.scoreSpecial.fixedToCamera = true;
 
 
