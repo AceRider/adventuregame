@@ -25,12 +25,23 @@ LoseState.prototype.init= function (params) {
 // create: instanciar e inicializar todos os objetos dessa scene
 LoseState.prototype.create = function() {
      var s = game.add.sprite(0, 0, 'gameover');
+     this.textHelp = "Press any key to back";
+    
+    this.game.add.text(380/2, 430, this.textHelp, fontCredits);
+    this.returnKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);    
+   
+     
+     
+    this.game.input.mouse.capture = true;
     this.returnKey = this.game.input.keyboard.addKey(Phaser.Keyboard.ENTER);
 }
 
 // update: o que fazer a cada quadro por segundo
 LoseState.prototype.update = function() {
-    if(this.returnKey.isDown){
+    if(game.input.activePointer.leftButton.isDown || this.returnKey.isDown){
+       this.game.state.start('game',true,false,{nextLevel:currentLevel});
+    }
+     window.onkeydown = function(event) {
         this.game.state.start('game',true,false,{nextLevel:currentLevel});
     }
 }

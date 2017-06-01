@@ -42,6 +42,7 @@ BootState.prototype.preload = function() {
     this.game.load.audio('spPickUp', 'Assets/sounds/sp_pickup.wav');
     this.game.load.audio('enemyDeath', 'Assets/sounds/impact.wav');
     this.game.load.audio('music', 'Assets/sounds/gametheme.ogg');
+    this.game.load.audio('mainMenu', 'Assets/sounds/main_menu.ogg');
     this.game.load.audio('pauseIn', 'Assets/sounds/pause_in.wav');
     this.game.load.audio('pauseOut', 'Assets/sounds/pause_out.wav');
    

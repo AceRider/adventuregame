@@ -9,6 +9,7 @@
 //Um estado é sempre um objeto JavaScript, com no mínimo as 3 funções principais: preload, create e update
 //As funções sempre começam com NomeDoObjeto.prototype 
 var StartState = function (game) { };
+var self;
 
 // preload: carregar todos os assets necessários para esta scene ou para as próximas
 StartState.prototype.preload = function () {
@@ -19,6 +20,11 @@ StartState.prototype.preload = function () {
 
 // create: instanciar e inicializar todos os objetos dessa scene
 StartState.prototype.create = function () {
+    self=this;
+    this.music = this.game.add.audio('mainMenu');
+    this.music.loop = true;
+    this.music.play();
+    
     var s = game.add.sprite(0, 0, 'menu');
     this.start = game.add.sprite(310, 320, 'btnplay');
     this.start .anchor.setTo(0.5,0.5);
@@ -27,6 +33,7 @@ StartState.prototype.create = function () {
 
     this.start.inputEnabled = true;
     this.start.events.onInputUp.add(function () {
+        self.music.stop();
         game.state.start('game');
     });
 
