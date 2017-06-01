@@ -16,7 +16,7 @@ var GameState = {
             }
             var died = (params.died) ? params.died : false;
             if (died) {
-                game.state.start('lose');
+                game.state.start('lose',true,false,{currentLevel:currentLevel});
             }
         }
 
