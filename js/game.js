@@ -140,18 +140,17 @@ var GameState = {
             enemy.body.bounce.x = 1;
         });
 
-        this.scoreText = this.game.add.text(100, 50, "Score: 0", fontConfig);
+        this.scoreText = this.game.add.text(20, 20, "Score: 0", fontConfig);
         this.scoreText.fixedToCamera = true;
 
 
-        this.scoreSpecialText = this.game.add.text(570, 50, "0/0", fontConfig);
+        this.scoreSpecialText = this.game.add.text(550, 20, "0/0", fontConfig);
         this.scoreSpecialText.fixedToCamera = true;
-        this.scoreSpecial = this.game.add.sprite(540, 50, "items");
+        this.scoreSpecial = this.game.add.sprite(500, 10, "items");
         this.scoreSpecial.frame = 3;
         this.scoreSpecial.fixedToCamera = true;
 
-
-        this.helpText = this.game.add.text(100, 430, "'R'-Restart\n'P'-Pause", fontHelp);
+        this.helpText = this.game.add.text(20, 430, "'R'-Restart\n'P'-Pause", fontHelp);
         this.helpText.fixedToCamera = true;
 
         //Game state

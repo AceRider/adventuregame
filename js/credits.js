@@ -19,7 +19,7 @@ CreditsState.prototype.preload = function() {
 CreditsState.prototype.create = function() {
     
     this.text = "Universidade Estadual do Amazonas\n\n\n"+
-                "Pós-Graduação em Desenvolvimento de Jogos Eletrônicos\n\n\n"+
+                "Pós-Graduação em Desenvolvimento \nde Jogos Eletrônicos\n\n\n"+
                 "Equipe:\n"+
                 "Aecio Jorge\n"+
                 "Carol\n"+ 

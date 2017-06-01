@@ -22,7 +22,7 @@ var fontConfig =  {
 
 var fontCredits =  { 
     font : 'Press Start 2P',
-    fontSize : 11,
+    fontSize : 12,
     fill: "#ffffff" };
 
 var fontHelp =  { 
