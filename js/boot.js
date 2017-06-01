@@ -24,12 +24,12 @@ BootState.prototype.preload = function() {
     this.game.load.image('mapTiles', 'Assets/spritesheets/cenario2.png');
     this.game.load.audio('jumpSound', 'Assets/sounds/jump.wav');
     this.game.load.audio('pickUp', 'Assets/sounds/pickup.wav');
-    this.game.load.audio('enemyDeath', 'Assets/sounds/hit2.ogg');
-    this.game.load.audio('music', 'Assets/sounds/mystery.wav');
-    this.game.load.tilemap('level1', 'Assets/maps/level1.json', null, Phaser.Tilemap.TILED_JSON);
-    this.game.load.tilemap('level2', 'Assets/maps/level2.json', null, Phaser.Tilemap.TILED_JSON);
-    this.game.load.tilemap('level3', 'Assets/maps/level3.json', null, Phaser.Tilemap.TILED_JSON);
-    
+    this.game.load.audio('spPickUp', 'Assets/sounds/sp_pickup.wav');
+    this.game.load.audio('enemyDeath', 'Assets/sounds/impact.wav');
+    this.game.load.audio('music', 'Assets/sounds/gametheme.ogg');
+    this.game.load.audio('pauseIn', 'Assets/sounds/pause_in.wav');
+    this.game.load.audio('pauseOut', 'Assets/sounds/pause_out.wav');
+   
 }
 
 // create: instanciar e inicializar todos os objetos dessa scene

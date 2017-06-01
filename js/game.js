@@ -4,11 +4,13 @@ var layerWidth = 0;
 var layerHeight = 0;
 var currentLevel = 1;
 var maxLevel = 2;
+var isGamePlaying = false;
 var GameState = {
     init: function (params) {
         console.log(params);
         if (params) {
             currentLevel = (params.nextLevel) ? params.nextLevel : currentLevel;
+            isGamePlaying = (params.isPlaying) ? true : false;
             if (currentLevel > maxLevel) {
                 game.state.start('win');
             }
@@ -22,7 +24,7 @@ var GameState = {
 
     preload: function () {
         // console.log(this.camera);
-
+        this.game.load.tilemap('level'+currentLevel, 'Assets/maps/level'+currentLevel+'.json', null, Phaser.Tilemap.TILED_JSON);
     },
 
     create: function () {
@@ -46,13 +48,18 @@ var GameState = {
         //Ativando audio
         this.jumpSound = this.game.add.audio('jumpSound');
         this.pickUp = this.game.add.audio('pickUp');
+        this.spPickUp = this.game.add.audio('spPickUp');
         this.enemyDeath = this.game.add.audio('enemyDeath');
 
         //BG Music
         this.music = this.game.add.audio('music');
         this.music.loop = true;
-        this.music.play();
-
+        
+        if (!isGamePlaying) {  
+            console.log('music plays');
+           this.music.play();
+        }
+        
         // Player
         // Inicializando jogador  
         this.player = this.game.add.sprite(160, 64, 'player', 5);
