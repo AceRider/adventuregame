@@ -11,7 +11,13 @@ function pauseController(self) {
     
         window.onkeydown = function(event) {
             if (event.keyCode == 80){
+                self.pauseIn.play();
+               // setTimeout("funcao",1000);
                 self.game.paused = !self.game.paused;
+               // setTimeout(function(){
+                 //  self.game.paused=!self.game.paused;
+                //},1000);
+                
                 if(self.game.paused){
                     pauseLabel();
                 }else{
@@ -33,6 +39,7 @@ function pauseController(self) {
             choiseLabel = self.game.add.text(w/2, h-150, 'Game Paused', fontConfig);
             choiseLabel.anchor.setTo(0.5, 0.5);
             choiseLabel.fixedToCamera = true;
+            
         };
 
         // Add a input listener that can help us return from being paused
@@ -63,6 +70,7 @@ function pauseController(self) {
                 }
                     // Remove \the menu and the label
                    // menu.destroy();
+                self.pauseOut.play();
                 choiseLabel.destroy();
                     
             };

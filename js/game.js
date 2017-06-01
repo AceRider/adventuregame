@@ -50,6 +50,8 @@ var GameState = {
         this.pickUp = this.game.add.audio('pickUp');
         this.spPickUp = this.game.add.audio('spPickUp');
         this.enemyDeath = this.game.add.audio('enemyDeath');
+        this.pauseIn = this.game.add.audio('pauseIn');
+        this.pauseOut = this.game.add.audio('pauseOut');
 
         //BG Music
         this.music = this.game.add.audio('music');
