@@ -10,4 +10,5 @@ game.state.add('start', StartState);
 game.state.add('game', GameState);
 game.state.add('win', WinState);
 game.state.add('lose', LoseState);
+game.state.add('credits', CreditsState);
 game.state.start('boot');

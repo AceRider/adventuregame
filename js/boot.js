@@ -15,6 +15,11 @@ var fontConfig =  {
     fontSize : 20,
     fill: "#ffffff" };
 
+var fontCredits =  { 
+    font : 'Press Start 2P',
+    fontSize : 11,
+    fill: "#ffffff" };
+
 // preload: carregar todos os assets necessários para esta scene ou para as próximas
 BootState.prototype.preload = function() {
     // Não há nenhum asset a ser carregado aqui, então a função fica vazia
