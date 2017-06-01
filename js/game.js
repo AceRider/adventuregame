@@ -2,7 +2,7 @@
 var preview = true;
 var layerWidth = 0;
 var layerHeight = 0;
-var currentLevel = 1;
+var currentLevel = 2;
 var maxLevel = 2;
 var isGamePlaying = false;
 var GameState = {
@@ -23,7 +23,6 @@ var GameState = {
     },
 
     preload: function () {
-        // console.log(this.camera);
         this.game.load.tilemap('level' + currentLevel, 'Assets/maps/level' + currentLevel + '.json', null, Phaser.Tilemap.TILED_JSON);
     },
 
@@ -31,6 +30,7 @@ var GameState = {
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
 
         this.level = this.game.add.tilemap('level' + currentLevel);
+        console.log(this.level);
         this.level.addTilesetImage('tiles', 'mapTiles');
 
         layerWidth = this.level.widthInPixels;
@@ -43,7 +43,8 @@ var GameState = {
 
         // Colida com todos, menos esses aqui
         this.level.setCollisionByExclusion([8,13,14,15,16], true, this.wallsLayer);
-        this.level.setCollision([1,2,3,4,5,6,19,20,21], true, this.lavaLayer);
+        this.level.setCollision([0,1,2,3,4,5], true, this.lavaLayer);
+        console.log(this.lavaLayer);
 
         //Ativando audio
         this.jumpSound = this.game.add.audio('jumpSound');
@@ -156,7 +157,6 @@ var GameState = {
 
         //Game state
         this.totalDiamonds = this.normalPoints.length + this.normalPoints2.length;
-        console.log(this.totalDiamonds);
         this.collectedDiamonds = 0;
         this.totalspecialPoints = this.specialPoints.length;
         this.collectedSpecialPoints = 0;
@@ -217,6 +217,7 @@ var GameState = {
         new Collision.collect(player, bat, this);
     },
     lavaDeath: function (player, lava) {
+        console.log(lava);
         new Collision.death(player, lava, this);
     }
 };

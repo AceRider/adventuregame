@@ -8,7 +8,6 @@
 
 //Um estado é sempre um objeto JavaScript, com no mínimo as 3 funções principais: preload, create e update
 //As funções sempre começam com NomeDoObjeto.prototype 
-var currentLevel=1;
 var LoseState = function(game) {};
 
 // preload: carregar todos os assets necessários para esta scene ou para as próximas

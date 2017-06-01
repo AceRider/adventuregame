@@ -47,7 +47,7 @@ function pauseController(self) {
         };
 
         // Add a input listener that can help us return from being paused
-        self.game.input.onDown.add(unpause, self);
+       // self.game.input.onDown.add(unpause, self);
 
         // And finally the method that handels the pause menu
         function unpause(event){

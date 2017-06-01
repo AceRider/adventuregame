@@ -4,7 +4,6 @@ var Collision = {
             self.collectedDiamonds++;
             self.score += 100;
             self.scoreText.text = "Score: " + self.score;
-            console.log(self.collectedDiamonds+"/"+self.totalDiamonds);
             if (self.collectedDiamonds == self.totalDiamonds) {
             //    if (1 == 1) {
                 console.log('GANHOU');
