@@ -23,7 +23,7 @@
          "y":0
         }, 
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 23, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 20, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 23, 18, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 20, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 23, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 20, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 23, 18, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 27, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 20, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":16,
          "name":"Walls",
          "opacity":1,
@@ -43,6 +43,10 @@
                  "height":32,
                  "id":188,
                  "name":"skeleton",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -55,6 +59,10 @@
                  "height":32,
                  "id":724,
                  "name":"PinkEnemie",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -67,6 +75,10 @@
                  "height":32,
                  "id":725,
                  "name":"GreenEnemie",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -79,6 +91,10 @@
                  "height":32,
                  "id":726,
                  "name":"PinkEnemie",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -89,20 +105,12 @@
                 {
                  "gid":38,
                  "height":32,
-                 "id":727,
-                 "name":"skeleton",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":544,
-                 "y":256
-                }, 
-                {
-                 "gid":38,
-                 "height":32,
                  "id":728,
                  "name":"skeleton",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -115,6 +123,10 @@
                  "height":32,
                  "id":729,
                  "name":"skeleton",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -127,6 +139,10 @@
                  "height":32,
                  "id":730,
                  "name":"skeleton",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -139,6 +155,10 @@
                  "height":32,
                  "id":733,
                  "name":"skeleton",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -163,6 +183,10 @@
                  "height":32,
                  "id":623,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -175,6 +199,10 @@
                  "height":32,
                  "id":633,
                  "name":"diamond",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -187,6 +215,10 @@
                  "height":32,
                  "id":642,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -199,6 +231,10 @@
                  "height":32,
                  "id":646,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -211,6 +247,10 @@
                  "height":32,
                  "id":647,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -223,6 +263,10 @@
                  "height":32,
                  "id":648,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -235,6 +279,10 @@
                  "height":32,
                  "id":649,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -247,6 +295,10 @@
                  "height":32,
                  "id":650,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -259,6 +311,10 @@
                  "height":32,
                  "id":651,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -271,6 +327,10 @@
                  "height":32,
                  "id":652,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -283,6 +343,10 @@
                  "height":32,
                  "id":653,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -295,6 +359,10 @@
                  "height":32,
                  "id":654,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -307,6 +375,10 @@
                  "height":32,
                  "id":655,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -319,6 +391,10 @@
                  "height":32,
                  "id":656,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -331,6 +407,10 @@
                  "height":32,
                  "id":657,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -343,6 +423,10 @@
                  "height":32,
                  "id":658,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -355,6 +439,10 @@
                  "height":32,
                  "id":659,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -367,6 +455,10 @@
                  "height":32,
                  "id":662,
                  "name":"diamond",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -379,6 +471,10 @@
                  "height":32,
                  "id":663,
                  "name":"diamond",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -391,6 +487,10 @@
                  "height":32,
                  "id":664,
                  "name":"diamond",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -403,6 +503,10 @@
                  "height":32,
                  "id":665,
                  "name":"diamond",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -415,6 +519,10 @@
                  "height":32,
                  "id":666,
                  "name":"diamond",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -427,6 +535,10 @@
                  "height":32,
                  "id":667,
                  "name":"diamond",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -439,6 +551,10 @@
                  "height":32,
                  "id":672,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -451,6 +567,10 @@
                  "height":32,
                  "id":673,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -463,6 +583,10 @@
                  "height":32,
                  "id":674,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -475,6 +599,10 @@
                  "height":32,
                  "id":675,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -487,6 +615,10 @@
                  "height":32,
                  "id":677,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -499,6 +631,10 @@
                  "height":32,
                  "id":678,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -511,6 +647,10 @@
                  "height":32,
                  "id":679,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -523,6 +663,10 @@
                  "height":32,
                  "id":680,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -535,6 +679,10 @@
                  "height":32,
                  "id":681,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -547,6 +695,10 @@
                  "height":32,
                  "id":682,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -559,6 +711,10 @@
                  "height":32,
                  "id":683,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -571,6 +727,10 @@
                  "height":32,
                  "id":684,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -583,6 +743,10 @@
                  "height":32,
                  "id":685,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -595,6 +759,10 @@
                  "height":32,
                  "id":686,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -607,6 +775,10 @@
                  "height":32,
                  "id":687,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -619,6 +791,10 @@
                  "height":32,
                  "id":688,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -631,6 +807,10 @@
                  "height":32,
                  "id":689,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -643,6 +823,10 @@
                  "height":32,
                  "id":692,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -655,6 +839,10 @@
                  "height":32,
                  "id":693,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -667,6 +855,10 @@
                  "height":32,
                  "id":694,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -679,6 +871,10 @@
                  "height":32,
                  "id":695,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -691,6 +887,10 @@
                  "height":32,
                  "id":696,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -703,6 +903,10 @@
                  "height":32,
                  "id":697,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -715,6 +919,10 @@
                  "height":32,
                  "id":698,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -727,6 +935,10 @@
                  "height":32,
                  "id":700,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -739,6 +951,10 @@
                  "height":32,
                  "id":701,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -751,6 +967,10 @@
                  "height":32,
                  "id":702,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -763,6 +983,10 @@
                  "height":32,
                  "id":703,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -775,6 +999,10 @@
                  "height":32,
                  "id":706,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -787,6 +1015,10 @@
                  "height":32,
                  "id":707,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -799,6 +1031,10 @@
                  "height":32,
                  "id":708,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -811,6 +1047,10 @@
                  "height":32,
                  "id":709,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -823,6 +1063,10 @@
                  "height":32,
                  "id":710,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -835,6 +1079,10 @@
                  "height":32,
                  "id":711,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -847,6 +1095,10 @@
                  "height":32,
                  "id":712,
                  "name":"gold2",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -859,6 +1111,10 @@
                  "height":32,
                  "id":714,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -871,6 +1127,10 @@
                  "height":32,
                  "id":715,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -883,6 +1143,10 @@
                  "height":32,
                  "id":716,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -895,6 +1159,10 @@
                  "height":32,
                  "id":717,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -907,6 +1175,10 @@
                  "height":32,
                  "id":718,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -919,6 +1191,10 @@
                  "height":32,
                  "id":719,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -931,6 +1207,10 @@
                  "height":32,
                  "id":720,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -943,6 +1223,10 @@
                  "height":32,
                  "id":721,
                  "name":"gold",
+                 "properties":
+                    {
+
+                    },
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -959,43 +1243,56 @@
         }],
  "nextobjectid":735,
  "orientation":"orthogonal",
+ "properties":
+    {
+
+    },
  "renderorder":"right-down",
  "tileheight":32,
  "tilesets":[
         {
-         "columns":6,
          "firstgid":1,
          "image":"..\/spritesheets\/cenario2.png",
          "imageheight":160,
          "imagewidth":192,
          "margin":0,
          "name":"tiles",
+         "properties":
+            {
+
+            },
          "spacing":0,
          "tilecount":30,
          "tileheight":32,
          "tilewidth":32
         }, 
         {
-         "columns":3,
          "firstgid":31,
          "image":"..\/spritesheets\/enemies.png",
          "imageheight":96,
          "imagewidth":96,
          "margin":0,
          "name":"enemies",
+         "properties":
+            {
+
+            },
          "spacing":0,
          "tilecount":9,
          "tileheight":32,
          "tilewidth":32
         }, 
         {
-         "columns":3,
          "firstgid":40,
          "image":"..\/spritesheets\/items2.png",
          "imageheight":32,
          "imagewidth":96,
          "margin":0,
          "name":"items",
+         "properties":
+            {
+
+            },
          "spacing":0,
          "tilecount":3,
          "tileheight":32,

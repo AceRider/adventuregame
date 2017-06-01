@@ -197,6 +197,16 @@ var GameState = {
                 enemy.scale.x = 1 * Math.sign(enemy.body.velocity.x);
             }
         });
+        this.GreenEnemie.forEach(function (enemy) {
+            if (enemy.body.velocity.x != 0) {
+                enemy.scale.x = 1 * Math.sign(enemy.body.velocity.x);
+            }
+        });
+        this.PinkEnemie.forEach(function (enemy) {
+            if (enemy.body.velocity.x != 0) {
+                enemy.scale.x = 1 * Math.sign(enemy.body.velocity.x);
+            }
+        });
         new pauseController(this);
 
         var restart = this.game.input.keyboard.addKey(Phaser.Keyboard.R);
